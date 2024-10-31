@@ -3,7 +3,7 @@ import Icons from "./Skills/Icons";
 import logo from "../assets/media/Frame 1026.png";
 const Footer = () => {
   return (
-    <footer className="footer footer-center text-base-content rounded p-10 md:p-6 sm:p-4 bg-black">
+    <footer className="footer footer-center text-base-content rounded p-10 md:p-6 sm:p-4 ">
       <nav className="grid grid-flow-col gap-4">
         <a className="#">
           <img src={logo} />

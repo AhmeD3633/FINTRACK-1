@@ -2,6 +2,7 @@ import React from "react";
 import Skills from "./Skills";
 import Icons from "./Icons";
 import Bullets from "../DesignAccessories/Bullets";
+import SideDev from "../DesignAccessories/SideDiv";
 
 const ToolAndSkills = () => {
   return (
@@ -28,7 +29,9 @@ const ToolAndSkills = () => {
           omar.bendary.jr@gmail.com
         </a>
       </div>
-      {/* <Bullets /> */}
+      <Bullets />
+      <SideDev position={"left"} top={"top-[900px]"}  left={"left-[1000px]"}/>
+
     </section>
   );
 };

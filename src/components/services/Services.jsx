@@ -3,6 +3,7 @@ import img1 from "../../assets/media/Web Development.png";
 import img2 from "../../assets/media/Api Development.png";
 import img3 from "../../assets/media/Consulting.png";
 import img4 from "../../assets/media/Freelancing.png";
+import SideDiv from "../DesignAccessories/SideDiv";
 
 const Services = () => {
   const Services = [
@@ -64,6 +65,9 @@ const Services = () => {
             </div>
           </div>
         ))}
+        <SideDiv position={"left"} top={"top-[2400px]"} left={"left-[1000px]"} />
+        <SideDiv position={"right"} top={"top-[2200px]"} left={"left-[-1500px]"} />
+
       </div>
     </section>
   );

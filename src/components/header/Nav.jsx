@@ -58,7 +58,7 @@ const Nav = () => {
               <div className="flex space-x-1">
                 {links.map((link, index) => (
                   <a
-                    key={link.index}
+                    key={index}
                     href={link.href}
                     className="nav-item text-xs 2xl:text-[18px] font-normal text-black rounded-md px-3 py-2 "
                   >
@@ -77,9 +77,9 @@ const Nav = () => {
       {/* Dropdown Menu on Smaller Screens */}
       <DisclosurePanel className="2xl:hidden">
         <div className="space-y-1 px-2 pb-3 pt-2 shadow-[0_0_30px_20px_rgba(237,_245,_255,_0.8)] rounded-xl absolute z-10 inset-x-0 mt-10 w-full bg-white flex flex-col justify-center items-start">
-          {links.map((link) => (
+          {links.map((link,index ) => (
             <DisclosureButton
-              key={link.title}
+              key={index}
               as="a"
               href={link.href}
               className=" rounded-md px-3 py-2 text-base font-medium flex items-center w-full justify-start text-left  "
