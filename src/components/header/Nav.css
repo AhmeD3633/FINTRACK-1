@@ -1,0 +1,31 @@
+.nav-item {
+  position: relative;
+  color: #000000;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item:focus {
+  outline: none;
+  color: #5070d1;
+  font-weight: 400;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  width: 0;
+  height: 2px;
+  background-color: #5070d1;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item:focus::after {
+  width: 60%;
+}
+
+.nav-item:focus,
+.nav-item:hover {
+  color: #5070d1;
+}
