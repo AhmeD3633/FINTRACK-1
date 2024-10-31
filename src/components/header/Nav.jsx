@@ -14,6 +14,7 @@ import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaProjectDiagram } from "react-icons/fa";
 import { FaBlog } from "react-icons/fa";
 import { RiProfileLine } from "react-icons/ri";
+import { FaArrowRight } from "react-icons/fa";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -85,9 +86,10 @@ const Nav = () => {
             >
               <link.icon className="text-xl ml-2 text-[#8B6FC4] mr-4" />
               {link.title}
+              <FaArrowRight className="text-[#8B6FC4] ml-auto" />
             </DisclosureButton>
           ))}
-          <div className="block mt-2 ">
+          <div className="block mt-2 mx-auto">
             <Button />
           </div>
         </div>
