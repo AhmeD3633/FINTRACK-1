@@ -12,7 +12,7 @@ import Testimonial from "./components/Testimonial/Testimonial";
 function App() {
   return (
     <div>
-      <div className="relative mx-auto lg:max-w-[60%] font-Poppins pt-0 flex flex-col items-center space-y-5 lg:space-y-0 px-2 md:px-0">
+      <div className="relative mx-auto 2xl:max-w-[60%] font-Poppins pt-0 flex flex-col items-center space-y-5 lg:space-y-0 px-3 2xl:px-0 ">
         <Nav />
         <Hero />
         <ToolAndSkills />
