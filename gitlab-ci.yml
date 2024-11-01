@@ -1,0 +1,43 @@
+stages:
+  - build
+  - deploy
+
+before_script:
+  - "which ssh-agent || ( apk update && apk add openssh-client )"
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan 3.234.184.50 >> ~/.ssh/known_hosts
+
+build:
+  stage: build
+  image: node:20
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - apk update && apk add rsync
+    - rsync --delete-after -va dist/ ubuntu@3.234.184.50:/var/www/html/portfolio_frontend/dist/
+    - echo -e
+      "
+      cd /var/www/html/portfolio_frontend/;
+      git checkout package-lock.json;
+      git checkout package.json;
+      git pull origin main;
+      source ~/.nvm/nvm.sh;
+      nvm use node 20;
+      npm i;
+      " | ssh ubuntu@3.234.184.50
+
+  only:
+    - main
