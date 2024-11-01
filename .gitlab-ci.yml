@@ -24,8 +24,9 @@ build:
 
 deploy:
   stage: deploy
-  image: alpine/rsync # Using an image with rsync pre-installed
+  image: alpine:3.15 # Using a stable version of Alpine
   script:
+    - apk update && apk add rsync # Install rsync manually
     - rsync --delete-after -va dist/ ubuntu@3.234.184.50:/var/www/html/portfolio_frontend/dist/
     - |
       ssh ubuntu@3.234.184.50 << EOF
