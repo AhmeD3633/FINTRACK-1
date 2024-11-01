@@ -24,9 +24,9 @@ build:
 
 deploy:
   stage: deploy
-  image: alpine:3.15 # Using a stable version of Alpine
+  image: alpine:3.15
   script:
-    - apk update && apk add rsync # Install rsync manually
+    - apk update && apk add rsync
     - rsync --delete-after -va dist/ ubuntu@3.234.184.50:/var/www/html/portfolio_frontend/dist/
     - |
       ssh ubuntu@3.234.184.50 << EOF
@@ -34,9 +34,13 @@ deploy:
         git checkout package-lock.json
         git checkout package.json
         git pull origin main
-        source ~/.nvm/nvm.sh
-        nvm use 20
-        npm install
+        # Use system-installed Node.js if NVM is not available
+        if [ -f ~/.nvm/nvm.sh ]; then
+          source ~/.nvm/nvm.sh
+          nvm use 20
+        fi
+        # Run npm install with sudo to avoid permission errors
+        sudo npm install
       EOF
   only:
     - main
