@@ -24,20 +24,18 @@ build:
 
 deploy:
   stage: deploy
-  image: alpine:latest
+  image: alpine/rsync # Using an image with rsync pre-installed
   script:
-    - apk update && apk add rsync
     - rsync --delete-after -va dist/ ubuntu@3.234.184.50:/var/www/html/portfolio_frontend/dist/
-    - echo -e
-      "
-      cd /var/www/html/portfolio_frontend/;
-      git checkout package-lock.json;
-      git checkout package.json;
-      git pull origin main;
-      source ~/.nvm/nvm.sh;
-      nvm use node 20;
-      npm i;
-      " | ssh ubuntu@3.234.184.50
-
+    - |
+      ssh ubuntu@3.234.184.50 << EOF
+        cd /var/www/html/portfolio_frontend/
+        git checkout package-lock.json
+        git checkout package.json
+        git pull origin main
+        source ~/.nvm/nvm.sh
+        nvm use 20
+        npm install
+      EOF
   only:
     - main
