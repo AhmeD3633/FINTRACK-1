@@ -11,8 +11,8 @@ import Testimonial from "./components/Testimonial/Testimonial";
 
 function App() {
   return (
-    <div>
-      <div className="relative mx-auto 2xl:max-w-[60%] font-Poppins pt-0 flex flex-col items-center 2xl:space-y-5 space-y-10 lg:space-y-0 px-3 2xl:px-0 ">
+    <div className="">
+      <div className="relative mx-auto 2xl:max-w-[60%] font-Poppins pt-0 flex flex-col items-center 2xl:space-y-10 space-y-12 lg:space-y-0 px-3 2xl:px-0 ">
         <Nav />
         <Hero />
         <ToolAndSkills />
