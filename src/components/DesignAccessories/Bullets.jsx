@@ -2,7 +2,7 @@ import React from "react";
 
 const Bullets = () => {
   return (
-    <div className="hidden 2xl:flex items-center flex-col space-y-4 p-4 w-[60px] h-64 absolute left-10 top-[1390px]">
+    <div className="hidden 2xl:flex items-center flex-col space-y-4 p-4 w-[60px] h-64 absolute left-10 top-[1230px]">
       <div className="flex flex-col space-y-10">
         {/* First row with a single bullet */}
         <div className="flex space-x-8">

@@ -31,8 +31,8 @@ const links = [
 
 const Nav = () => {
   return (
-    <Disclosure as="nav" className="w-full sticky top-0 z-10">
-      <div className="mx-auto absolute inset-x-0 bg-white">
+    <Disclosure as="nav" className="w-full sticky top-0 z-50 ">
+      <div className="mx-auto absolute inset-x-0 bg-white rounded-3xl">
         {/* NAVIGATION_HERE ON LARGE SCREEN */}
         <div className="relative flex w-full items-center justify-center">
           {/* Mobile menu button */}
@@ -77,7 +77,7 @@ const Nav = () => {
       {/* Dropdown Menu on Smaller Screens */}
       <DisclosurePanel className="2xl:hidden">
         <div className="space-y-1 px-2 pb-3 pt-2 shadow-[0_0_30px_20px_rgba(237,_245,_255,_0.8)] rounded-xl absolute z-10 inset-x-0 mt-10 w-full bg-white flex flex-col justify-center items-start">
-          {links.map((link,index ) => (
+          {links.map((link, index) => (
             <DisclosureButton
               key={index}
               as="a"

@@ -15,7 +15,7 @@ const AboutMe = () => {
   return (
     <section
       id="about"
-      className="flex flex-col justify-center items-center w-full min-h-screen px-4 lg:px-0 md:space-y-16"
+      className="flex flex-col justify-center items-center w-full min-h-[80vh] px-4 lg:px-0 md:space-y-16"
     >
       <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl">
         About me<span className="text-[#8B6FC4]">.</span>
@@ -27,7 +27,7 @@ const AboutMe = () => {
           alt="About Me"
         />
         <div className="space-y-4 md:space-y-7 text-center lg:text-left max-w-xl">
-          <p className="tracking-tight leading-7 sm:leading-8 font-medium text-base sm:text-lg md:text-xl">
+          <p className="tracking-normal font-medium text-base sm:text-lg md:text-xl leading-6 sm:leading-9 md:leading-[38px]">
             Hi there, I'm Omar Bendary, a software engineer with a strong
             passion for building innovative and user-friendly web applications.
             My journey began in 2020 with a Bachelor's in Communications and

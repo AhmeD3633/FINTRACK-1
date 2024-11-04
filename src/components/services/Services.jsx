@@ -65,9 +65,16 @@ const Services = () => {
             </div>
           </div>
         ))}
-        <SideDiv position={"left"} top={"top-[2400px]"} left={"left-[1000px]"} />
-        <SideDiv position={"right"} top={"top-[2200px]"} left={"left-[-1500px]"} />
-
+        <SideDiv
+          position={"left"}
+          top={"top-[2400px]"}
+          left={"left-[1000px]"}
+        />
+        <SideDiv
+          position={"right"}
+          top={"top-[2200px]"}
+          left={"left-[-1500px]"}
+        />
       </div>
     </section>
   );

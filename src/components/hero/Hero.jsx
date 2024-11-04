@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="flex flex-col md:flex-row justify-center items-center w-full max-h-screen 2xl:h-[100vh] relative px-6 lg:px-0 pt-6 2xl:pt-0"
+      className="flex flex-col md:flex-row justify-center items-center w-full max-h-screen 2xl:h-[77vh] relative px-6 lg:px-0 pt-6 2xl:pt-0"
     >
       {/* LEFT-SIDE */}
       <div className="flex-[0.5] space-y-4 md:space-y-7 text-center md:text-left p-10 rounded-3xl px-2">
@@ -64,16 +64,16 @@ const Hero = () => {
       </div>
 
       {/* RIGHT-SIDE */}
-      <div className="hidden flex-[0.5] 2xl:flex justify-center 2xl:justify-end items-center pt-6 md:pt-8">
+      <div className="hidden flex-[0.5] xl:flex justify-center 2xl:justify-end items-center pt-6 md:pt-8">
         <img
           src={img1}
           alt="Profile"
-          className="w-48 h-48 2xl:w-auto 2xl:h-auto"
+          className="w-auto 2xl:w-auto 2xl:h-auto"
         />
       </div>
 
       {/* ARROW */}
-      <div className="hidden 2xl:block absolute bottom-[120px] left-[100px]">
+      <div className="hidden 2xl:block absolute bottom-[20px] left-[100px]">
         <img src={vector} alt="Arrow" className="" />
       </div>
     </div>
