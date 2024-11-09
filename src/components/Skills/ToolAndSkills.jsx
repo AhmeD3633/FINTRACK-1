@@ -4,7 +4,7 @@ import Icons from "./Icons";
 import Bullets from "../DesignAccessories/Bullets";
 import SideDev from "../DesignAccessories/SideDiv";
 
-const ToolAndSkills = () => {
+const ToolAndSkills = ({ socialMediaData, toolsAndSkillsData }) => {
   return (
     <section
       id="skills"
@@ -14,11 +14,11 @@ const ToolAndSkills = () => {
         <h1 className="text-xl md:text-2xl font-bold text-[#8B6FC4] text-center">
           Tool & Skills
         </h1>
-        <Skills />
+        <Skills toolsAndSkillsData={toolsAndSkillsData} />
         <p className="text-xl md:text-2xl font-bold text-[#8B6FC4] text-center">
           Check out me
         </p>
-        <Icons />
+        <Icons socialMediaData={socialMediaData} />
         <p className="text-xl md:text-2xl font-bold text-[#8B6FC4] text-center">
           Contact me
         </p>
@@ -30,8 +30,7 @@ const ToolAndSkills = () => {
         </a>
       </div>
       <Bullets />
-      <SideDev position={"left"} top={"top-[900px]"}  left={"left-[1000px]"}/>
-
+      <SideDev position={"left"} top={"top-[900px]"} left={"left-[1000px]"} />
     </section>
   );
 };

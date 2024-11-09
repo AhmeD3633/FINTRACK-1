@@ -3,15 +3,7 @@ import aboutMePic from "../../assets/media/19362653 1.png";
 import Button from "../Button";
 import ProgressBar from "./ProgressBar";
 
-const AboutMe = () => {
-  const progressData = [
-    { label: "Python", percentage: 80 },
-    { label: "Django", percentage: 60 },
-    { label: "Django Rest Framework", percentage: 90 },
-    { label: "HTML / CSS / Javascript", percentage: 70 },
-    { label: "React", percentage: 80 },
-  ];
-
+const AboutMe = ({ technicalSkills }) => {
   return (
     <section
       id="about"
@@ -35,11 +27,11 @@ const AboutMe = () => {
             my skills and exploring the ever-evolving world of web development.
           </p>
           <div>
-            {progressData.map((item, index) => (
+            {technicalSkills.map((skill, index) => (
               <ProgressBar
                 key={index}
-                label={item.label}
-                percentage={item.percentage}
+                label={skill.name}
+                percentage={skill.percentage}
               />
             ))}
           </div>

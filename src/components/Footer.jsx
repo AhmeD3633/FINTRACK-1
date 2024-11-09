@@ -1,7 +1,7 @@
 import React from "react";
 import Icons from "./Skills/Icons";
 import logo from "../assets/media/Frame 1026.png";
-const Footer = () => {
+const Footer = ({ socialMediaData }) => {
   return (
     <footer className="footer footer-center text-base-content rounded p-10 md:p-6 sm:p-4 ">
       <nav className="grid grid-flow-col gap-4">
@@ -11,7 +11,7 @@ const Footer = () => {
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
-          <Icons />
+          <Icons socialMediaData={socialMediaData} />
         </div>
       </nav>
       <aside>
