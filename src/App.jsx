@@ -51,7 +51,7 @@ function App() {
         <AboutMe technicalSkills={data.technicalSkills} />
         <Services services={data.services} />
         <Portfolio portfolio={data.portfolio} />
-        <Testimonial />
+        <Testimonial testimonial={data.testimonial} />
         <Contact />
       </div>
       <Footer socialMediaData={data.socialMediaData} />

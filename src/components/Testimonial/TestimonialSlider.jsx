@@ -6,45 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import avatar from "../../assets/media/Image (10).png";
 
-const testimonials = [
-  {
-    name: "Mina Ayman",
-    position: "CEO at investmentV.",
-    testimonial:
-      "We highly recommend the creative agency to anyone who is looking for a team of talented and professional designers and developers. They are always willing to help. ",
-    avatar: avatar,
-  },
-  {
-    name: "John Doe",
-    position: "Founder at CompanyX.",
-    testimonial:
-      "We highly recommend the creative agency to anyone who is looking for a team of talented and professional designers and developers. ",
-    avatar: avatar,
-  },
-  {
-    name: "John Doe",
-    position: "Founder at CompanyX.",
-    testimonial:
-      "We highly recommend the creative agency to anyone who is looking for a team of talented and professional designers and developers. ",
-    avatar: avatar,
-  },
-  {
-    name: "John Doe",
-    position: "Founder at CompanyX.",
-    testimonial:
-      "We highly recommend the creative agency to anyone who is looking for a team of talented and professional designers and developers. ",
-    avatar: avatar,
-  },
-  {
-    name: "John Doe",
-    position: "Founder at CompanyX.",
-    testimonial:
-      "We highly recommend the creative agency to anyone who is looking for a team of talented and professional designers and developers. ",
-    avatar: avatar,
-  },
-];
-
-export default function TestimonialSlider() {
+export default function TestimonialSlider({ testimonialData = [] }) {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -68,16 +30,16 @@ export default function TestimonialSlider() {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         className="mySwiper shadow-[0_0_30px_20px_rgba(237,_245,_255,_0.5)] rounded-[20px]"
       >
-        {testimonials.map((testimonial, index) => (
+        {testimonialData.map((testimonial, index) => (
           <SwiperSlide key={index} className="text-center">
             <div className="w-full shadow-[0_0_30px_20px_rgba(237,_245,_255,_0.5)] h-auto p-6 md:h-64 bg-white rounded-lg flex flex-col justify-center items-center">
               <p className="text-[14px] md:text-[16px] leading-6 font-normal text-[#4C4C4C] mb-4">
-                {testimonial.testimonial}
+                {testimonial.text}
               </p>
 
               <div className="w-full flex items-center justify-center mt-4 border-t border-[#E5EFFF] pt-4">
                 <img
-                  src={avatar}
+                  src={testimonial.logo}
                   alt="Avatar"
                   className="rounded-full w-12 h-12 md:w-16 md:h-16 mr-4"
                 />
@@ -86,7 +48,7 @@ export default function TestimonialSlider() {
                     {testimonial.name}
                   </h4>
                   <p className="text-xs md:text-sm text-gray-500">
-                    {testimonial.position}
+                    {testimonial.role}
                   </p>
                 </div>
               </div>
@@ -98,7 +60,7 @@ export default function TestimonialSlider() {
       <SlideBtn
         swiper={swiperInstance}
         currentIndex={currentIndex}
-        totalSlides={testimonials.length}
+        totalSlides={testimonialData.length}
       />
     </div>
   );
