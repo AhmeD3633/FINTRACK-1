@@ -8,12 +8,14 @@ export const fetchAllData = async () => {
       socialMediaData,
       technicalSkills,
       services,
+      portfolio,
     ] = await Promise.all([
       axios.get("https://backend.omarbendary.com/api/head-section/"),
       axios.get("https://backend.omarbendary.com/api/tools-and-skills/"),
       axios.get("https://backend.omarbendary.com/api/social-media-platform/"),
       axios.get("https://backend.omarbendary.com/api/technical-skills/"),
       axios.get("https://backend.omarbendary.com/api/service/"),
+      axios.get("https://backend.omarbendary.com/api/portfolio/"),
     ]);
     return {
       heroData: heroData.data,
@@ -21,6 +23,7 @@ export const fetchAllData = async () => {
       socialMediaData: socialMediaData.data,
       technicalSkills: technicalSkills.data,
       services: services.data,
+      portfolio: portfolio.data,
     };
   } catch (err) {
     console.log("Error fetching hero data:", err);

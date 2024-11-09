@@ -50,7 +50,7 @@ function App() {
         />
         <AboutMe technicalSkills={data.technicalSkills} />
         <Services services={data.services} />
-        <Portfolio />
+        <Portfolio portfolio={data.portfolio} />
         <Testimonial />
         <Contact />
       </div>
