@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import { motion } from "framer-motion";
 import img1 from "../../assets/media/backend-developer (1).png";
 import Button from "../Button";
-import { motion } from "framer-motion";
 import vector from "../../assets/media/Vector.png";
-// import { getHeroData } from "../../api";
 
 const Hero = ({ heroData }) => {
   return (
@@ -38,14 +36,6 @@ const Hero = ({ heroData }) => {
         >
           {heroData?.title || "Experienced Software Engineer"}
         </motion.h1>
-        {/* <motion.h1
-          className="font-semibold text-4xl md:text-6xl md:ml-8 whitespace-nowrap"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          Software Engineer
-        </motion.h1> */}
         <motion.p
           className="font-normal text-base md:text-xl max-w-[300px] md:max-w-[535px] mx-auto md:mx-0"
           initial={{ opacity: 0, y: -20 }}
@@ -75,6 +65,14 @@ const Hero = ({ heroData }) => {
           alt="Profile"
           className="w-auto 2xl:w-auto 2xl:h-auto"
           whileHover={{ scale: 1.05 }}
+          animate={{
+            y: ["-2%", "2%", "-2%"],
+            transition: {
+              duration: 4,
+              repeat: Infinity, 
+              ease: "easeInOut",
+            },
+          }}
         />
       </motion.div>
 

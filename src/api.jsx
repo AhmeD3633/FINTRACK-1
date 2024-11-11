@@ -10,6 +10,7 @@ export const fetchAllData = async () => {
       services,
       portfolio,
       testimonial,
+      siteConfiguration,
     ] = await Promise.all([
       axios.get("https://backend.omarbendary.com/api/head-section/"),
       axios.get("https://backend.omarbendary.com/api/tools-and-skills/"),
@@ -18,6 +19,7 @@ export const fetchAllData = async () => {
       axios.get("https://backend.omarbendary.com/api/service/"),
       axios.get("https://backend.omarbendary.com/api/portfolio/"),
       axios.get("https://backend.omarbendary.com/api/testimonial/"),
+      axios.get("https://backend.omarbendary.com/api/site-configuration/"),
     ]);
     return {
       heroData: heroData.data,
@@ -27,6 +29,7 @@ export const fetchAllData = async () => {
       services: services.data,
       portfolio: portfolio.data,
       testimonial: testimonial.data,
+      siteConfiguration: siteConfiguration.data,
     };
   } catch (err) {
     console.log("Error fetching hero data:", err);
