@@ -2,8 +2,18 @@ import React from "react";
 import aboutMePic from "../../assets/media/19362653 1.png";
 import Button from "../Button";
 import ProgressBar from "./ProgressBar";
+import { motion } from "framer-motion";
 
-const AboutMe = ({ technicalSkills }) => {
+const AboutMe = ({ technicalSkills, ownerInfo = [] }) => {
+  const handleDownload = () => {
+    const fileUrl = ownerInfo.resume;
+    console.log("Resume URL:", fileUrl);
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "Resume.pdf";
+    link.click();
+  };
+
   return (
     <section
       id="about"
@@ -12,19 +22,24 @@ const AboutMe = ({ technicalSkills }) => {
       <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl">
         About me<span className="text-[#8B6FC4]">.</span>
       </h1>
-      <div className="flex flex-col lg:flex-row items-center mt-8 lg:mt-0">
-        <img
+      <div className="flex flex-col xl:flex-row items-center mt-8 lg:mt-0">
+        <motion.img
           src={aboutMePic}
           className="w-3/4 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl rounded-lg mb-6 lg:mb-0 lg:mr-8"
           alt="About Me"
+          whileHover={{ scale: 1.05 }}
+          animate={{
+            y: ["-2%", "2%", "-2%"],
+            transition: {
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
         />
         <div className="space-y-4 md:space-y-7 text-center lg:text-left max-w-xl">
           <p className="tracking-normal font-medium text-base sm:text-lg md:text-xl leading-6 sm:leading-9 md:leading-[38px]">
-            Hi there, I'm Omar Bendary, a software engineer with a strong
-            passion for building innovative and user-friendly web applications.
-            My journey began in 2020 with a Bachelor's in Communications and
-            Computer Engineering, and ever since, I've been continuously honing
-            my skills and exploring the ever-evolving world of web development.
+            {ownerInfo.about}
           </p>
           <div>
             {technicalSkills.map((skill, index) => (
@@ -36,7 +51,7 @@ const AboutMe = ({ technicalSkills }) => {
             ))}
           </div>
           <div className="flex justify-center lg:justify-start">
-            <Button title="Download CV" />
+            <Button title="Download CV" onClick={handleDownload} />
           </div>
         </div>
       </div>

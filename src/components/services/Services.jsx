@@ -22,7 +22,7 @@ const Services = ({ services = { services: [], text: "" } }) => {
   return (
     <section id="services" className="w-full space-y-10 px-4 md:px-8 lg:px-16">
       {/* TEXT HERE */}
-      <div className="text-center space-y-6">
+      <div className="text-center space-y-6 mt-5">
         <h1 className="font-semibold text-4xl md:text-5xl lg:text-6xl ">
           Services<span className="text-[#8B6FC4]">.</span>
         </h1>

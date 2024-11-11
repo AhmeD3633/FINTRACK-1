@@ -5,7 +5,7 @@ const Portfolio = ({ portfolio = { projects: [], text: "" } }) => {
   return (
     <section
       id="portfolio"
-      className="flex flex-col justify-center items-center w-full min-h-screen space-y-8"
+      className="flex flex-col justify-center items-center w-full h-[120vh] md:h-[70vh] xl:min-h-screen space-y-8"
     >
       <div className="flex flex-col justify-center items-center z-10 space-y-6 md:space-y-8 lg:space-y-10">
         <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center">

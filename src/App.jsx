@@ -48,7 +48,7 @@ function App() {
           socialMediaData={data.socialMediaData}
           toolsAndSkillsData={data.toolsAndSkillsData}
         />
-        <AboutMe technicalSkills={data.technicalSkills} />
+        <AboutMe technicalSkills={data.technicalSkills} ownerInfo={data.ownerInfo} />
         <Services services={data.services} />
         <Portfolio portfolio={data.portfolio} />
         <Testimonial testimonial={data.testimonial} />
