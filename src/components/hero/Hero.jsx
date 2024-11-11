@@ -29,12 +29,20 @@ const Hero = ({ heroData }) => {
           {heroData?.name || "Omar Bendary"}
         </motion.p>
         <motion.h1
-          className="font-semibold text-4xl md:text-6xl "
+          className="font-semibold text-4xl md:text-6xl"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {heroData?.title || "Experienced Software Engineer"}
+          {heroData?.title || "Experienced"}
+        </motion.h1>
+        <motion.h1
+          className="font-semibold text-4xl md:text-6xl md:ml-8 whitespace-nowrap"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {heroData?.sub_title || "Software Engineer"}
         </motion.h1>
         <motion.p
           className="font-normal text-base md:text-xl max-w-[300px] md:max-w-[535px] mx-auto md:mx-0"
@@ -69,7 +77,7 @@ const Hero = ({ heroData }) => {
             y: ["-2%", "2%", "-2%"],
             transition: {
               duration: 4,
-              repeat: Infinity, 
+              repeat: Infinity,
               ease: "easeInOut",
             },
           }}
