@@ -4,10 +4,10 @@ import Button from "../Button";
 import ProgressBar from "./ProgressBar";
 import { motion } from "framer-motion";
 
-const AboutMe = ({ technicalSkills, ownerInfo = [] }) => {
+const AboutMe = ({ technicalSkills, ownerInfo }) => {
   const handleDownload = () => {
     const fileUrl = ownerInfo.resume;
-    console.log("Resume URL:", fileUrl);
+    console.log(ownerInfo.resume);
     const link = document.createElement("a");
     link.href = fileUrl;
     link.download = "Resume.pdf";
@@ -51,7 +51,9 @@ const AboutMe = ({ technicalSkills, ownerInfo = [] }) => {
             ))}
           </div>
           <div className="flex justify-center lg:justify-start">
-            <Button title="Download CV" onClick={handleDownload} />
+            <button onClick={handleDownload}>
+              <Button title="Download CV" />
+            </button>
           </div>
         </div>
       </div>

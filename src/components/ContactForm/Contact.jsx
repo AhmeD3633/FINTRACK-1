@@ -4,7 +4,7 @@ import phone from "../../assets/media/Vector (4).png";
 import Message from "./Message";
 import SideDiv from "../DesignAccessories/SideDiv";
 
-const Contact = () => {
+const Contact = ({ ownerInfo }) => {
   return (
     <section className="flex flex-col space-y-10 w-[80%] 2xl:h-screen mb-4">
       <div className="flex flex-col justify-center items-center z-10 space-y-12">
@@ -31,7 +31,7 @@ const Contact = () => {
               </span>{" "}
               <span className="flex-1 md:flex-grow-0">
                 {" "}
-                omar.bendary.jr@gmail.com
+                {ownerInfo.email}
               </span>
             </a>
           </div>
@@ -44,7 +44,7 @@ const Contact = () => {
                 <img src={phone} />
               </span>{" "}
               <span className="flex-1 md:flex-grow-0 whitespace-nowrap">
-                +20 128 815 3092
+                {ownerInfo.phone}
               </span>
             </a>
           </div>

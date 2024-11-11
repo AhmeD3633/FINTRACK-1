@@ -52,7 +52,7 @@ function App() {
         <Services services={data.services} />
         <Portfolio portfolio={data.portfolio} />
         <Testimonial testimonial={data.testimonial} />
-        <Contact />
+        <Contact ownerInfo={data.ownerInfo}/>
       </div>
       <Footer socialMediaData={data.socialMediaData} />
     </div>
