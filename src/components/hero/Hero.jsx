@@ -1,10 +1,10 @@
 import React from "react";
+import { motion } from "framer-motion";
 import img1 from "../../assets/media/backend-developer (1).png";
 import Button from "../Button";
-import { motion } from "framer-motion";
 import vector from "../../assets/media/Vector.png";
 
-const Hero = () => {
+const Hero = ({ heroData }) => {
   return (
     <div
       id="home"
@@ -26,7 +26,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Omar Bendary
+          {heroData?.name || "Omar Bendary"}
         </motion.p>
         <motion.h1
           className="font-semibold text-4xl md:text-6xl"
@@ -34,7 +34,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Experienced
+          {heroData?.title || "Experienced"}
         </motion.h1>
         <motion.h1
           className="font-semibold text-4xl md:text-6xl md:ml-8 whitespace-nowrap"
@@ -42,7 +42,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Software Engineer
+          {heroData?.sub_title || "Software Engineer"}
         </motion.h1>
         <motion.p
           className="font-normal text-base md:text-xl max-w-[300px] md:max-w-[535px] mx-auto md:mx-0"
@@ -50,13 +50,11 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          Passionate software engineer with +2 years of experience crafting
-          efficient and scalable web solutions.
+          {heroData?.description ||
+            "Passionate software engineer with +2 years of experience crafting efficient and scalable web solutions."}
         </motion.p>
         <div className="flex justify-center md:justify-start">
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button title="Hire Me" />
-          </motion.div>
+          <Button title="Hire Me" />
         </div>
 
         {/* DOT */}
@@ -64,18 +62,37 @@ const Hero = () => {
       </div>
 
       {/* RIGHT-SIDE */}
-      <div className="hidden flex-[0.5] xl:flex justify-center 2xl:justify-end items-center pt-6 md:pt-8">
-        <img
+      <motion.div
+        className="hidden flex-[0.5] xl:flex justify-center 2xl:justify-end items-center pt-6 md:pt-8"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <motion.img
           src={img1}
           alt="Profile"
           className="w-auto 2xl:w-auto 2xl:h-auto"
+          whileHover={{ scale: 1.05 }}
+          animate={{
+            y: ["-2%", "2%", "-2%"],
+            transition: {
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
         />
-      </div>
+      </motion.div>
 
       {/* ARROW */}
-      <div className="hidden 2xl:block absolute bottom-[20px] left-[100px]">
-        <img src={vector} alt="Arrow" className="" />
-      </div>
+      <motion.div
+        className="hidden 2xl:block absolute bottom-[20px] left-[100px]"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+      >
+        <motion.img src={vector} alt="Arrow" whileHover={{ x: 5 }} />
+      </motion.div>
     </div>
   );
 };

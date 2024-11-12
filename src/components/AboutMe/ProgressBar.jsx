@@ -1,8 +1,15 @@
 import React from "react";
+import { motion, useInView } from "framer-motion";
 
 const ProgressBar = ({ label, percentage }) => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="flex flex-col lg:flex-row items-center lg:space-x-14 mb-4">
+    <div
+      ref={ref}
+      className="flex flex-col lg:flex-row items-center lg:space-x-14 mb-4"
+    >
       <div className="w-full lg:w-40 flex-[0.4] flex items-center space-x-2 whitespace-nowrap mb-2 lg:mb-0">
         <div className="p-1 bg-gray-100 rounded-3xl">
           <svg
@@ -24,10 +31,13 @@ const ProgressBar = ({ label, percentage }) => {
       </div>
       <div className="w-full lg:flex-[0.6] h-4">
         <div className="h-2 bg-[#F8F8F8] rounded-full">
-          <div
+          <motion.div
             className="h-full bg-[#8B6FC4] rounded-full flex justify-center items-center text-xs text-gray-700"
             style={{ width: `${percentage}%` }}
-          ></div>
+            initial={{ width: 0 }}
+            animate={isInView ? { width: `${percentage}%` } : {}}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          ></motion.div>
         </div>
       </div>
     </div>

@@ -7,6 +7,9 @@ export default {
         "2k": "2048px",
         "4k": "3840px",
       },
+      animation: {
+        "spin-slow": "spin 2s linear infinite",
+      },
     },
   },
   daisyui: {

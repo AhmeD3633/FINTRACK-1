@@ -4,7 +4,7 @@ import phone from "../../assets/media/Vector (4).png";
 import Message from "./Message";
 import SideDiv from "../DesignAccessories/SideDiv";
 
-const Contact = () => {
+const Contact = ({ ownerInfo }) => {
   return (
     <section className="flex flex-col space-y-10 w-[80%] 2xl:h-screen mb-4">
       <div className="flex flex-col justify-center items-center z-10 space-y-12">
@@ -12,9 +12,10 @@ const Contact = () => {
           Contact Form<span className="text-[#8B6FC4]">.</span>
         </h1>
         <p className="text-[14px] text-center md:text-[16px] font-normal text-gray-500 leading-6">
-          Lorem ipsum dolor sit amet consectetur. Facilisis molestie facilisis
-          posuere sagittis orci est. Diam in a volutpat libero elit rhoncus
-          dolor sit.
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities to be part of your vision. Whether you have a question
+          or just want to say hello, feel free to reach out. Looking forward to
+          connecting with you!
         </p>
       </div>
 
@@ -28,7 +29,10 @@ const Contact = () => {
               <span className="mr-4">
                 <img src={email} />
               </span>{" "}
-              <span className="flex-1 md:flex-grow-0"> omar.bendary.jr@gmail.com</span>
+              <span className="flex-1 md:flex-grow-0">
+                {" "}
+                {ownerInfo.email}
+              </span>
             </a>
           </div>
           <div className="flex items-center justify-center border border-[#E5EFFF] py-5 px-2 rounded-xl shadow-sm">
@@ -39,7 +43,9 @@ const Contact = () => {
               <span className="mr-4 md:pr-20 lg:pr-0 ml-2">
                 <img src={phone} />
               </span>{" "}
-              <span className="flex-1 md:flex-grow-0 whitespace-nowrap">+20 128 815 3092</span>
+              <span className="flex-1 md:flex-grow-0 whitespace-nowrap">
+                {ownerInfo.phone}
+              </span>
             </a>
           </div>
         </div>
