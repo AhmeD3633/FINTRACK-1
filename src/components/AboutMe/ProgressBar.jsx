@@ -27,12 +27,14 @@ const ProgressBar = ({ label, percentage }) => {
             />
           </svg>
         </div>
-        <span className="text-gray-700">{label}</span>
+        <span className="text-gray-700 text-sm md:text-base lg:text-lg">
+          {label}
+        </span>
       </div>
       <div className="w-full lg:flex-[0.6] h-4">
         <div className="h-2 bg-[#F8F8F8] rounded-full">
           <motion.div
-            className="h-full bg-[#8B6FC4] rounded-full flex justify-center items-center text-xs text-gray-700"
+            className="h-full bg-[#8B6FC4] rounded-full flex justify-center items-center text-[clamp(10px,1vw,12px)] text-gray-700"
             style={{ width: `${percentage}%` }}
             initial={{ width: 0 }}
             animate={isInView ? { width: `${percentage}%` } : {}}

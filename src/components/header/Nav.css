@@ -1,31 +1,24 @@
-.nav-item {
+/* Nav.css */
+.menu a {
   position: relative;
-  color: #000000;
-  transition: all 0.3s ease-in-out;
+  text-decoration: none; /* Remove the default underline */
 }
 
-.nav-item:focus {
-  outline: none;
-  color: #5070d1;
-  font-weight: 400;
-}
-
-.nav-item::after {
+.menu a.underline:after {
   content: "";
+  display: block;
   position: absolute;
-  bottom: 8px;
-  left: 12px;
-  width: 0;
+  bottom: 10px; /* Adjust the space as needed */
+  left: 15%;
+  width: 50%; /* Make the underline 60% of the text width */
   height: 2px;
   background-color: #5070d1;
-  transition: width 0.3s ease-in-out;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
 
-.nav-item:focus::after {
-  width: 60%;
-}
-
-.nav-item:focus,
-.nav-item:hover {
-  color: #5070d1;
+.menu a.underline:hover:after,
+.menu a.underline-active:after {
+  transform: scaleX(1);
 }
