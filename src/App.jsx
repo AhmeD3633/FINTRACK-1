@@ -10,6 +10,7 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Services from "./components/services/Services";
 import ToolAndSkills from "./components/Skills/ToolAndSkills";
 import Testimonial from "./components/Testimonial/Testimonial";
+import Drawer from "./components/header/Drawer";
 
 function App() {
   const [data, setData] = useState(null);
@@ -40,19 +41,22 @@ function App() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <div className="relative mx-auto 2xl:max-w-[60vw] font-Poppins pt-0 flex flex-col items-center 2xl:space-y-10 space-y-12 lg:space-y-0 px-3 2xl:px-0 ">
-        <Nav />
+        <Drawer />
         <Hero heroData={data.heroData} />
         <ToolAndSkills
           socialMediaData={data.socialMediaData}
           toolsAndSkillsData={data.toolsAndSkillsData}
         />
-        <AboutMe technicalSkills={data.technicalSkills} ownerInfo={data.ownerInfo} />
+        <AboutMe
+          technicalSkills={data.technicalSkills}
+          ownerInfo={data.ownerInfo}
+        />
         <Services services={data.services} />
         <Portfolio portfolio={data.portfolio} />
         <Testimonial testimonial={data.testimonial} />
-        <Contact ownerInfo={data.ownerInfo}/>
+        <Contact ownerInfo={data.ownerInfo} />
       </div>
       <Footer socialMediaData={data.socialMediaData} />
     </div>
