@@ -83,7 +83,7 @@ const Drawer = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-[#f0f4f8] text-gray-800 min-h-full w-80 p-4 space-y-3">
+        <ul className="menu bg-[#ffffff] text-gray-800 min-h-full w-80 p-4 space-y-3">
           {links.map((link, index) => (
             <li key={index}>
               <a
