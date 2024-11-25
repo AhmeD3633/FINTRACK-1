@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { LuHome } from "react-icons/lu";
 import { CgDetailsMore } from "react-icons/cg";
@@ -14,15 +14,53 @@ const Drawer = () => {
     { title: "About me", href: "#about", icon: CgDetailsMore },
     { title: "Services", href: "#services", icon: FaHandHoldingUsd },
     { title: "Projects", href: "#portfolio", icon: FaProjectDiagram },
-    { title: "Blog", href: "#blog", icon: FaBlog },
+    // { title: "Blog", href: "#blog", icon: FaBlog },
     { title: "My resume", href: "#resume", icon: RiProfileLine },
   ];
 
   const [activeLink, setActiveLink] = useState("#home");
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.6,
+      }
+    );
+
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => observer.observe(section));
+
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setActiveLink("#home");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleLinkClick = (href) => {
     setActiveLink(href);
     document.getElementById("my-drawer-3").checked = false;
+
+    // Smooth scroll to the section
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
