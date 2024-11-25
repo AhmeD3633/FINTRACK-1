@@ -7,6 +7,7 @@ import { RiProfileLine } from "react-icons/ri";
 import logo from "../../assets/media/logoipsum-292 1 (2).png";
 import Button from "./Button";
 import "./Nav.css";
+import ResumeModal from "./ResumeModal";
 
 const Drawer = () => {
   const links = [
@@ -54,9 +55,11 @@ const Drawer = () => {
 
   const handleLinkClick = (href) => {
     setActiveLink(href);
+    if (href === "#resume") {
+      document.getElementById("my_modal_2").showModal();
+    }
     document.getElementById("my-drawer-3").checked = false;
 
-    // Smooth scroll to the section
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
@@ -141,6 +144,8 @@ const Drawer = () => {
           </div>
         </ul>
       </div>
+
+      <ResumeModal />
     </div>
   );
 };

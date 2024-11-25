@@ -4,7 +4,6 @@ import { fetchAllData } from "./api";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Contact from "./components/ContactForm/Contact";
 import Footer from "./components/Footer";
-import Nav from "./components/header/Nav";
 import Hero from "./components/hero/Hero";
 import Portfolio from "./components/portfolio/Portfolio";
 import Services from "./components/services/Services";
