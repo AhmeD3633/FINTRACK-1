@@ -19,15 +19,11 @@ const SwiperComponent = ({ projects = [] }) => {
         pagination={{
           clickable: true,
         }}
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation]}
         spaceBetween={50}
         slidesPerView={1}
         onSwiper={setSwiperInstance}
         onSlideChange={handleSlideChange}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
         className="swiper-container"
       >
         {projects.map((project, index) => (

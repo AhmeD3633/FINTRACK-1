@@ -26,8 +26,7 @@ export default function TestimonialSlider({ testimonialData = [] }) {
         onSwiper={setSwiperInstance}
         onSlideChange={handleSlideChange}
         pagination={{ clickable: true }}
-        modules={[Navigation, Autoplay]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        modules={[Navigation]}
         className="mySwiper shadow-[0_0_30px_20px_rgba(237,_245,_255,_0.5)] rounded-[20px]"
       >
         {testimonialData.map((testimonial, index) => (

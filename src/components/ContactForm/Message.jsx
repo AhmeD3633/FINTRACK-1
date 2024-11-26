@@ -4,7 +4,8 @@ import Button from "../Button";
 import person from "../../assets/media/Icon.png";
 import email from "../../assets/media/Icon (1).png";
 import phone from "../../assets/media/Outline.png";
-import axios from "axios"; // Import axios for making the POST request
+import axios from "axios";
+import SubmitingAlert from "./SubmitingAlert";
 
 const Message = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +15,8 @@ const Message = () => {
     message: "",
   });
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false); // Track submitting state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +41,7 @@ const Message = () => {
           formData
         );
 
-        console.log("Form submitted successfully:", response.data);
+        setSuccessMessage("sent");
         setFormData({
           name: "",
           email: "",
@@ -50,6 +52,11 @@ const Message = () => {
         console.error("Error submitting the form:", error);
       } finally {
         setIsSubmitting(false);
+
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 5000);
       }
     }
   };
@@ -176,12 +183,17 @@ const Message = () => {
           {/* BOTTOM_PART */}
           <div>
             {/* BUTTON */}
-            <div className="w-full col-span-full flex justify-center mt-4">
+            <div className="w-full col-span-full flex flex-col justify-center items-center mt-4">
               <Button
                 title={isSubmitting ? "Submitting..." : "Send Message"}
                 type="submit"
-                disabled={isSubmitting} // Disable the button during submission
+                disabled={isSubmitting}
               />
+              {successMessage && (
+                <div className="mb-4 text-green-500 text-center font-medium mt-4">
+                  <SubmitingAlert />
+                </div>
+              )}
             </div>
           </div>
         </form>
