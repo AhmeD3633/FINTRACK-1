@@ -71,7 +71,7 @@ const Drawer = () => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar w-full flex justify-between py-2">
+        <div className="navbar w-full flex justify-between py-2 lg:px-16 2xl:px-0">
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"

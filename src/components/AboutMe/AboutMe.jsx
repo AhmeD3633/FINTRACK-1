@@ -5,15 +5,6 @@ import ProgressBar from "./ProgressBar";
 import { motion } from "framer-motion";
 
 const AboutMe = ({ technicalSkills, ownerInfo }) => {
-  const handleDownload = () => {
-    const fileUrl = ownerInfo.resume;
-    console.log(ownerInfo.resume);
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = "Resume.pdf";
-    link.click();
-  };
-
   return (
     <section
       id="about"
@@ -51,9 +42,9 @@ const AboutMe = ({ technicalSkills, ownerInfo }) => {
             ))}
           </div>
           <div className="flex justify-center lg:justify-start">
-            <button onClick={handleDownload}>
+            <a href="public/Omar Bendary's CV.pdf" download>
               <Button title="Download CV" />
-            </button>
+            </a>
           </div>
         </div>
       </div>
