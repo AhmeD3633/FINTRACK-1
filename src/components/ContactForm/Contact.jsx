@@ -6,7 +6,7 @@ import SideDiv from "../DesignAccessories/SideDiv";
 
 const Contact = ({ ownerInfo }) => {
   return (
-    <section className="flex flex-col space-y-10 w-[80%] 2xl:h-screen mb-4">
+    <section id="contact" className="flex flex-col space-y-10 w-[80%] 2xl:h-screen mb-4">
       <div className="flex flex-col justify-center items-center z-10 space-y-12">
         <h1 className="font-semibold text-4xl md:text-5xl lg:text-6xl ">
           Contact Form<span className="text-[#8B6FC4]">.</span>
