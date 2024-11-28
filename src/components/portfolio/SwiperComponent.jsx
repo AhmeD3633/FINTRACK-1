@@ -3,8 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
-import googlePlay from "../../assets/media/Mask Group 51.png";
-import appleStore from "../../assets/media/apple-store-icon-png-free-download-fourjayorg-app-store-icon-png-1000_736.png";
+import PortfolioSingleSlide from "./PortfolioSingleSlide";
 
 const SwiperComponent = ({ projects = [] }) => {
   const [swiperInstance, setSwiperInstance] = useState(null);
@@ -28,43 +27,7 @@ const SwiperComponent = ({ projects = [] }) => {
       >
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 p-4 flex flex-col space-y-4">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium leading-[56px] mb-2 ">
-                  {project.name}
-                </h2>
-                <h4 className=" text-base md:text-lg text-[18px] font-semibold leading-7 text-[#5070D1]">
-                  Description:
-                </h4>
-                <p className="text-md md:text-lg font-normal ">
-                  {project.description}
-                </p>
-                <h4 className="text-base md:text-lg text-[18px] font-semibold leading-7 text-[#5070D1]">
-                  Impact:
-                </h4>
-                <p className="text-md md:text-lg font-normal">
-                  {project.impact}
-                </p>
-                <h4 className="text-base md:text-lg text-[18px] font-semibold leading-7 text-[#5070D1]">
-                  View Live:
-                </h4>
-                <div className="flex mt-4">
-                  <a href={project.ios} className="mr-2">
-                    <img src={appleStore} alt="App Store" />
-                  </a>
-                  <a href={project.android}>
-                    <img src={googlePlay} alt="Google Play" />
-                  </a>
-                </div>
-              </div>
-              <div className="md:w-1/2 p-4">
-                <img
-                  src={project.image}
-                  alt="BOGO Plus Mobile App"
-                  className="w-full rounded-lg object-fill"
-                />
-              </div>
-            </div>
+            <PortfolioSingleSlide project={project} />
           </SwiperSlide>
         ))}
       </Swiper>
