@@ -1,6 +1,8 @@
 import React from "react";
 
-const ResumeModal = () => {
+const ResumeModal = ({ ownerInfo }) => {
+  const resume = ownerInfo.resume;
+
   return (
     <div>
       {/* Daisy UI Modal */}
@@ -9,8 +11,8 @@ const ResumeModal = () => {
           <h3 className="font-bold text-xl">Download My Resume</h3>
           <p className="py-4">Click the button below to download my CV.</p>
           <a
-            href="public/Omar Bendary's CV.pdf"
-            download
+            href={resume}
+            download="Omar_Bendary_CV" // Optional: You can specify the file name here
             className="btn mt-4 bg-[#8B6FC4] text-white hover:bg-[#7257A0] hover:text-white rounded-full px-8"
           >
             Download CV

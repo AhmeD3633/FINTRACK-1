@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="overflow-x-hidden">
       <div className="relative mx-auto 2xl:max-w-[60vw] font-Poppins pt-0 flex flex-col items-center space-y-12  px-3 2xl:px-0 lg:px-16 lg:space-y-10">
-        <Drawer />
+        <Drawer ownerInfo={data.ownerInfo} />
         <Hero heroData={data.heroData} />
         <ToolAndSkills
           socialMediaData={data.socialMediaData}

@@ -9,7 +9,7 @@ import Button from "./Button";
 import "./Nav.css";
 import ResumeModal from "./ResumeModal";
 
-const Drawer = () => {
+const Drawer = ({ ownerInfo }) => {
   const links = [
     { title: "Home", href: "#home", icon: LuHome },
     { title: "About me", href: "#about", icon: CgDetailsMore },
@@ -145,7 +145,7 @@ const Drawer = () => {
         </ul>
       </div>
 
-      <ResumeModal />
+      <ResumeModal ownerInfo={ownerInfo} />
     </div>
   );
 };

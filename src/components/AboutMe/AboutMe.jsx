@@ -5,6 +5,8 @@ import ProgressBar from "./ProgressBar";
 import { motion } from "framer-motion";
 
 const AboutMe = ({ technicalSkills, ownerInfo }) => {
+  const resume = ownerInfo.resume;
+
   return (
     <section
       id="about"
@@ -42,7 +44,7 @@ const AboutMe = ({ technicalSkills, ownerInfo }) => {
             ))}
           </div>
           <div className="flex justify-center lg:justify-start">
-            <a href="public/Omar Bendary's CV.pdf" download>
+            <a href={resume} download>
               <Button title="Download CV" />
             </a>
           </div>
