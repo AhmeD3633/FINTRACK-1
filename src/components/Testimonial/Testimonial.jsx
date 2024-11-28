@@ -4,7 +4,7 @@ import SideDiv from "../DesignAccessories/SideDiv";
 
 const Testimonial = ({ testimonial = { testimonials: [], text: "" } }) => {
   return (
-    <section className="flex flex-col justify-center items-center w-full h-[100vh]  md:h-[70vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[80vh] space-y-8">
+    <section className="flex flex-col justify-center items-center w-full h-[100vh]  md:min-h-screen lg:h-[100vh] xl:min-h-screen space-y-8">
       <div className="flex flex-col justify-center items-center z-10 space-y-6 md:space-y-8 lg:space-y-10">
         <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center">
           Testimonial<span className="text-[#8B6FC4]">.</span>

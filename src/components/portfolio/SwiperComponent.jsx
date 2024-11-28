@@ -15,6 +15,7 @@ const SwiperComponent = ({ projects = [] }) => {
   return (
     <div className="w-full max-w-[1200px] mx-auto p-4 shadow-[0_0_100px_40px_rgba(237,_245,_255,_0.5)] rounded-3xl relative">
       <Swiper
+        autoHeight={true}
         pagination={{
           clickable: true,
         }}
