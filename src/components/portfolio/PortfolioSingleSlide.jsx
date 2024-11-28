@@ -7,47 +7,55 @@ const PortfolioSingleSlide = ({ project }) => {
   const websiteUrl = project.website_url;
 
   return (
-    <div>
-      <div className="flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 p-4 flex flex-col space-y-4">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-medium leading-[56px] mb-2">
-            {project.name}
-          </h2>
-          <h4 className="text-base md:text-lg text-[18px] font-semibold leading-7 text-[#5070D1]">
-            Description:
-          </h4>
-          <p className="text-md md:text-lg font-normal">
+    <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 p-6">
+      {/* Left side content */}
+      <div className="md:w-1/2 p-4 flex flex-col space-y-6">
+        <h2 className="text-2xl md:text-3xl font-medium text-[#333] leading-[56px] mb-4">
+          {project.name}
+        </h2>
+
+        {/* Description Section */}
+        <div>
+          <h4 className="text-lg font-semibold text-[#5070D1]">Description:</h4>
+          <p className="text-md md:text-lg text-[#333]">
             {project.description}
           </p>
-          <h4 className="text-base md:text-lg text-[18px] font-semibold leading-7 text-[#5070D1]">
-            Impact:
-          </h4>
-          <p className="text-md md:text-lg font-normal">{project.impact}</p>
-          <h4 className="text-base md:text-lg text-[18px] font-semibold leading-7 text-[#5070D1]">
-            View Live:
-          </h4>
+        </div>
+
+        {/* Impact Section */}
+        <div>
+          <h4 className="text-lg font-semibold text-[#5070D1]">Impact:</h4>
+          <p className="text-md md:text-lg text-[#333]">{project.impact}</p>
+        </div>
+
+        {/* View Live Section */}
+        <div>
+          <h4 className="text-lg font-semibold text-[#5070D1]">View Live:</h4>
           {type === "web" ? (
             <motion.a
               href={websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-md md:text-lg font-normal text-[#8B6FC4] hover:text-[#6F42C1] cursor-pointer"
-              whileHover={{ scale: 1.05, color: "#6F42C1" }}
+              className="btn bg-[#8B6FC4] text-white border-none rounded-full px-8 py-3 mt-4 inline-block text-lg shadow-lg hover:bg-[#7257A0] hover:shadow-xl transition-all duration-300 ease-in-out"
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               whileTap={{ scale: 0.95 }}
             >
-              Click here to visit the website
+              Visit the Website
             </motion.a>
           ) : (
-            <div className="flex mt-4">
+            <div className="flex mt-4 space-x-4">
               <motion.a
                 href={project.ios}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mr-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <img src={appleStore} alt="App Store" />
+                <img
+                  src={appleStore}
+                  alt="App Store"
+                  className="w-[150px] md:w-[180px] object-contain"
+                />
               </motion.a>
               <motion.a
                 href={project.android}
@@ -56,18 +64,24 @@ const PortfolioSingleSlide = ({ project }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <img src={googlePlay} alt="Google Play" />
+                <img
+                  src={googlePlay}
+                  alt="Google Play"
+                  className="w-[150px] md:w-[180px] object-contain"
+                />
               </motion.a>
             </div>
           )}
         </div>
-        <div className="md:w-1/2 p-4">
-          <img
-            src={project.image}
-            alt="BOGO Plus Mobile App"
-            className="w-full rounded-lg object-fill"
-          />
-        </div>
+      </div>
+
+      {/* Right side image */}
+      <div className="md:w-1/2 p-4">
+        <img
+          src={project.image}
+          alt={project.name}
+          className="w-full rounded-lg object-cover shadow-lg"
+        />
       </div>
     </div>
   );
