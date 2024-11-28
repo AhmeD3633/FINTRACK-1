@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import avatar from "../../assets/media/Image (10).png";
+import Slide from "./Slide";
 
 export default function TestimonialSlider({ testimonialData = [] }) {
   const [swiperInstance, setSwiperInstance] = useState(null);
@@ -31,27 +31,7 @@ export default function TestimonialSlider({ testimonialData = [] }) {
       >
         {testimonialData.map((testimonial, index) => (
           <SwiperSlide key={index} className="text-center">
-            <div className="w-full shadow-[0_0_30px_20px_rgba(237,_245,_255,_0.5)] h-auto p-6 md:h-64 bg-white rounded-lg flex flex-col justify-center items-center">
-              <p className="text-[14px] md:text-[16px] leading-6 font-normal text-[#4C4C4C] mb-4">
-                {testimonial.text}
-              </p>
-
-              <div className="w-full flex items-center justify-center mt-4 border-t border-[#E5EFFF] pt-4">
-                <img
-                  src={testimonial.logo}
-                  alt="Avatar"
-                  className="rounded-full w-12 h-12 md:w-16 md:h-16 mr-4"
-                />
-                <div className="text-start">
-                  <h4 className="font-medium text-base md:text-lg">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-xs md:text-sm text-gray-500">
-                    {testimonial.role}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <Slide testimonial={testimonial} />
           </SwiperSlide>
         ))}
       </Swiper>
