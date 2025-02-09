@@ -37,7 +37,7 @@ const Message = () => {
 
       try {
         const response = await axios.post(
-          "https://backend.omarbendary.com/api/contact/",
+          "https://backend.omarbendary.com/api/contactaapi",
           formData
         );
 
@@ -62,7 +62,7 @@ const Message = () => {
   };
 
   return (
-    <div className="w-full h-auto p-8 rounded-3xl border border-[#E5EFFF] shadow-[0_0_30px_20px_rgba(237,_245,_255,_0.3)] px-3 md:px-8">
+    <div className="w-full h-auto p-8 rounded-3xl px-3 md:px-8 shadow-[0px_0px_20px_5px_rgba(201,141,21,0.2)]">
       <div className="w-full">
         <form onSubmit={handleSubmit} className="">
           {/* TOP_PART */}
@@ -71,13 +71,13 @@ const Message = () => {
             <div className="flex-1">
               <div className="mb-4 relative">
                 <label
-                  className="block text-gray-700 text-base font-medium mb-2"
+                  className="block text-gray-300 text-xl font-medium mb-2"
                   htmlFor="username"
                 >
                   Name
                 </label>
                 <input
-                  className="shadow appearance-none border-[#E5EFFF] rounded-xl w-full h-[52px] py-2 pl-10 pr-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-xs md:text-base"
+                  className="shadow appearance-none bg-dark border-t-2 border-b-2  border-primary rounded-xl w-full h-16 py-2 pl-10 pr-3 text-gray-300 leading-tight focus:outline-none focus:shadow-outline text-xs md:text-base"
                   id="username"
                   type="text"
                   placeholder="Enter your name"
@@ -94,17 +94,21 @@ const Message = () => {
                   src={person}
                   className="absolute left-3 top-1/2 transform -translate-y-1/2 pt-6"
                   alt="Person Icon"
+                  style={{
+                    filter:
+                      "brightness(0) saturate(100%) invert(53%) sepia(91%) saturate(372%) hue-rotate(3deg) brightness(97%) contrast(96%)",
+                  }}
                 />
               </div>
               <div className="mb-4 relative">
                 <label
-                  className="block text-gray-700 text-base font-medium mb-2"
+                  className="block text-gray-300 text-xl font-medium mb-2"
                   htmlFor="email"
                 >
                   Email
                 </label>
                 <input
-                  className="shadow appearance-none border-[#E5EFFF] rounded-xl w-full h-[52px] py-2 pl-10 pr-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline text-xs md:text-base"
+                  className="shadow appearance-none bg-dark border-t-2 border-b-2  border-primary rounded-xl w-full h-16 py-2 pl-10 pr-3 text-gray-300 mb-3 leading-tight focus:outline-none focus:shadow-outline text-xs md:text-base"
                   id="email"
                   type="email"
                   placeholder="Enter your email"
@@ -121,18 +125,22 @@ const Message = () => {
                   src={email}
                   className="absolute left-3 top-1/2 transform -translate-y-1/2 pt-4"
                   alt="Email Icon"
+                  style={{
+                    filter:
+                      "brightness(0) saturate(100%) invert(53%) sepia(91%) saturate(372%) hue-rotate(3deg) brightness(97%) contrast(96%)",
+                  }}
                 />
               </div>
               <div className="mb-6 relative">
                 <label
-                  className="block text-gray-700 text-base font-medium mb-2"
+                  className="block text-gray-300 text-xl font-medium mb-2"
                   htmlFor="phone"
                 >
                   Phone Number{" "}
                   <span className="text-gray-400 font-normal">(Optional)</span>
                 </label>
                 <input
-                  className="shadow appearance-none border-[#E5EFFF] rounded-xl w-full h-[52px] py-2 pl-10 pr-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline text-xs md:text-base"
+                  className="shadow appearance-none bg-dark border-t-2 border-b-2  border-primary rounded-xl w-full h-16 py-2 pl-10 pr-3 text-gray-300 mb-3 leading-tight focus:outline-none focus:shadow-outline text-xs md:text-base"
                   id="phone"
                   type="tel"
                   placeholder="Enter your phone number"
@@ -149,6 +157,10 @@ const Message = () => {
                   src={phone}
                   className="absolute left-3 top-1/2 transform -translate-y-1/2 pt-4"
                   alt="Phone Icon"
+                  style={{
+                    filter:
+                      "brightness(0) saturate(100%) invert(53%) sepia(91%) saturate(372%) hue-rotate(3deg) brightness(97%) contrast(96%)",
+                  }}
                 />
               </div>
             </div>
@@ -157,13 +169,13 @@ const Message = () => {
             <div className="flex-1">
               <div className="mb-4">
                 <label
-                  className="block text-gray-700 text-[16px] font-medium mb-2 leading-6"
+                  className="block text-gray-300 text-xl font-medium mb-2 leading-6"
                   htmlFor="message"
                 >
                   Message
                 </label>
                 <textarea
-                  className="shadow appearance-none border-[#E5EFFF] rounded-xl w-full h-[265px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-none"
+                  className="shadow appearance-none bg-dark border-t-2 border-b-2  border-primary rounded-xl w-full h-[300px] py-2 px-3 text-gray-300 leading-tight focus:outline-none focus:shadow-outline resize-none"
                   id="message"
                   placeholder="Your Message..."
                   rows={4}

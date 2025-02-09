@@ -1,7 +1,7 @@
 import React from "react";
 
-const ResumeModal = ({ ownerInfo }) => {
-  const resume = ownerInfo.resume;
+const ResumeModal = () => {
+  const resume = "/path-to-your-resume/Omar_Bendary_CV.pdf"; // Replace with the actual file path
 
   return (
     <div>
@@ -12,7 +12,7 @@ const ResumeModal = ({ ownerInfo }) => {
           <p className="py-4">Click the button below to download my CV.</p>
           <a
             href={resume}
-            download="Omar_Bendary_CV" // Optional: You can specify the file name here
+            download="Omar_Bendary_CV"
             className="btn mt-4 bg-[#8B6FC4] text-white hover:bg-[#7257A0] hover:text-white rounded-full px-8"
           >
             Download CV

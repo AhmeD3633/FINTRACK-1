@@ -10,6 +10,10 @@ export default {
       animation: {
         "spin-slow": "spin 2s linear infinite",
       },
+      colors: {
+        primary: "#C98D15",
+        dark: "#181818",
+      },
     },
   },
   daisyui: {

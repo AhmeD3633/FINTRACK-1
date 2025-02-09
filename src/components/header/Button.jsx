@@ -14,10 +14,10 @@ const Button = () => {
   return (
     <div className="flex justify-center">
       <button
-        className="btn btn-outline sm:w-[188px] h-[52px] rounded-full bg-white text-[#5070D1] font-semibold text-[18px] leading-4 hover:text-white 2xl:hover:bg-[#5070D1] hover:bg-[#5070D1] w-40"
+        className="btn btn-outline sm:w-[188px] h-[52px] rounded-[20px] bg-dark text-primary font-semibold text-[18px] leading-4 2xl:hover:bg-primary hover:bg-primary w-40 hover:text-dark "
         onClick={handleScroll}
       >
-        Hire Me
+        Hire Us
       </button>
     </div>
   );

@@ -12,7 +12,7 @@
   left: 15%;
   width: 50%; /* Make the underline 60% of the text width */
   height: 2px;
-  background-color: #5070d1;
+  background-color: #c98d15;
   transform: scaleX(0);
   transition: transform 0.3s ease;
   transform-origin: left;

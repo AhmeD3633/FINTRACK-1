@@ -4,61 +4,42 @@ import img1 from "../../assets/media/backend-developer (1).png";
 import Button from "../Button";
 import vector from "../../assets/media/Vector.png";
 
-const Hero = ({ heroData }) => {
+const Hero = () => {
   return (
     <div
       id="home"
-      className="flex flex-col md:flex-row justify-center items-center w-full max-h-screen 2xl:h-[77vh] relative px-6 lg:px-0 pt-6 2xl:pt-0 lg:pt-12"
+      className="flex flex-col md:flex-row justify-center items-center w-full max-h-screen 2xl:h-[77vh] relative px-6 lg:px-0 pt-6 2xl:pt-0 lg:pt-12 text-white"
     >
       {/* LEFT-SIDE */}
       <div className="flex-[0.5] space-y-4 md:space-y-7 text-center md:text-left p-10 rounded-3xl px-2">
-        <motion.p
-          className="text-lg md:text-xl font-semibold"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Hi, I'm
-        </motion.p>
-        <motion.p
-          className="text-2xl md:text-3xl font-semibold text-[#8B6FC4]"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          {heroData?.name || "Omar Bendary"}
-        </motion.p>
         <motion.h1
-          className="font-semibold text-4xl md:text-6xl"
+          className="font-semibold text-4xl md:text-5xl"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {heroData?.title || "Experienced"}
+          Take Control of Your
         </motion.h1>
         <motion.h1
-          className="font-semibold text-4xl md:text-6xl md:ml-8 whitespace-nowrap"
+          className="font-semibold text-4xl md:text-5xl md:ml-8 whitespace-nowrap"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          {heroData?.sub_title || "Software Engineer"}
+          Financial Future
         </motion.h1>
         <motion.p
-          className="font-normal text-base md:text-xl max-w-[300px] md:max-w-[535px] mx-auto md:mx-0"
+          className="font-normal text-gray-400 md:text-xl max-w-[300px] md:max-w-[560px] mx-auto md:mx-0"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          {heroData?.description ||
-            "Passionate software engineer with +2 years of experience crafting efficient and scalable web solutions."}
+          Track expenses, set smart budgets, and safeguard your savings from
+          inflation with FinTrack – your ultimate personal finance assistant.
         </motion.p>
         <div className="flex justify-center md:justify-start">
-          <Button title="Hire Me" />
+          <Button title="Hire Us" />
         </div>
-
-        {/* DOT */}
-        <span className="hidden 2xl:block w-3 h-3 md:w-5 md:h-5 rounded-full bg-[#8B6FC4] absolute top-[70%] md:top-[490px] left-[60%] md:left-[500px]"></span>
       </div>
 
       {/* RIGHT-SIDE */}
@@ -86,7 +67,7 @@ const Hero = ({ heroData }) => {
 
       {/* ARROW */}
       <motion.div
-        className="hidden 2xl:block absolute bottom-[20px] left-[100px]"
+        className="hidden 2xl:block absolute bottom-[20px] left-[100px] filter brightness-0 invert"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}

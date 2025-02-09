@@ -8,8 +8,13 @@ const AngledSide = ({ position, top, bottom, left, right }) => {
     <div
       className={`absolute ${top || ""} ${bottom || ""} ${left || ""} ${
         right || ""
-      } hidden 2xl:block w-[1618px] h-[506px] rounded-full bg-[linear-gradient(94.72deg,_rgba(203,_210,_238,_0)_8.33%,_#5070D1_57.27%)] opacity-50`}
-      style={{ zIndex: -1, transform: `rotate(${rotationDegree}deg)` }}
+      } hidden 2xl:block w-[1618px] h-[506px] rounded-full opacity-50`}
+      style={{
+        zIndex: -1,
+        transform: `rotate(${rotationDegree}deg)`,
+        background:
+          "linear-gradient(94.72deg, rgba(203, 210, 238, 0) 8.33%, rgba(201, 141, 21, 0.4) 57.27%)",
+      }}
     ></div>
   );
 };

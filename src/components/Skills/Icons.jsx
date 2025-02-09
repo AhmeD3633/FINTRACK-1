@@ -1,12 +1,23 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
+import FacebookIcon from "../../assets/media/facebook (2).png";
+import LinkedInIcon from "../../assets/media/linkedin (2).png";
+import InstagramIcon from "../../assets/media/instagram.png";
+import YoutubeIcon from "../../assets/media/youtube.png";
 
-const Icons = ({ socialMediaData = [] }) => {
+const Icons = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true }); // Trigger animation once
 
+  const socialMediaData = [
+    { name: "Facebook", url: "https://facebook.com", icon: FacebookIcon },
+    { name: "Instagram", url: "https://instagram.com", icon: InstagramIcon },
+    { name: "LinkedIn", url: "https://linkedin.com", icon: LinkedInIcon },
+    { name: "YouTube", url: "https://youtube.com", icon: YoutubeIcon },
+  ];
+
   return (
-    <div ref={ref} className="flex flex-wrap gap-4 justify-center p-4">
+    <div ref={ref} className="flex flex-wrap gap-10 justify-center p-4">
       {socialMediaData.map((social, index) => (
         <motion.div
           key={index}
@@ -20,7 +31,7 @@ const Icons = ({ socialMediaData = [] }) => {
             <img
               src={social.icon}
               alt={social.name}
-              className="w-8 h-8 md:w-10 md:h-10 transition-transform transform"
+              className="transition-transform transform"
             />
           </a>
         </motion.div>
