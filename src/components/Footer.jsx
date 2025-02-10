@@ -11,7 +11,7 @@ const Footer = ({ socialMediaData }) => {
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
-          <Icons socialMediaData={socialMediaData} />
+          <Icons />
         </div>
       </nav>
       <aside>

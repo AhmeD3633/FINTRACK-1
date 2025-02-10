@@ -35,9 +35,7 @@ const Contact = () => {
                 }}
               />
             </span>{" "}
-            <span className="flex-1 md:flex-grow-0">
-              omar.bendary.jr@gmail.com
-            </span>
+            <span className="flex-1 md:flex-grow-0">Fintrack.eg@gmail.com</span>
           </a>
         </div>
       </div>

@@ -7,15 +7,18 @@ const ResumeModal = () => {
     <div>
       {/* Daisy UI Modal */}
       <dialog id="my_modal_2" className="modal">
-        <div className="modal-box bg-slate-50">
-          <h3 className="font-bold text-xl">Download My Resume</h3>
-          <p className="py-4">Click the button below to download my CV.</p>
+        <div className="modal-box bg-dark">
+          <h3 className="font-bold text-xl text-white">Download Paper</h3>
+          <p className="py-4 text-gray-300">
+            Click the button below to download the paper.
+          </p>
           <a
             href={resume}
             download="Omar_Bendary_CV"
-            className="btn mt-4 bg-[#8B6FC4] text-white hover:bg-[#7257A0] hover:text-white rounded-full px-8"
+            className="btn mt-4 bg-primary border-primary text-white hover:bg-dark hover:border-primary hover:border-2 hover:text-primary rounded-full px-8"
           >
-            Download CV
+            {" "}
+            Download paper
           </a>
         </div>
         {/* Close button */}
